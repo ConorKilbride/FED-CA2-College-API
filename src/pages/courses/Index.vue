@@ -4,6 +4,7 @@
 
         <b-button :to="{ name : 'courses_create' }" variant="primary" class="mb-2 float-right">Add</b-button>
 
+        <!-- table loops through each course and heading from my headings below -->
 		<b-table striped hover responsive headVariant="dark" :items="courses" :fields="headings">
 
 			<template #cell(title)="data">
@@ -18,7 +19,7 @@
 <script>
 import axios from 'axios'
 
-// const COURSE_URL = "https://college-api-mo.herokuapp.com/api/"
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
     name: 'CoursesIndex',
@@ -58,7 +59,7 @@ export default {
             let token = localStorage.getItem('token')
 
             axios
-            .get(`https://college-api-mo.herokuapp.com/api/courses`,
+            .get(`${URL}courses`,
             {
               headers: {
                 "Authorization": `Bearer ${token}`

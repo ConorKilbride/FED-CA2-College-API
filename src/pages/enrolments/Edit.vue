@@ -2,6 +2,7 @@
     <b-col>
         <h2>Edit Enrolment</h2>
 
+        <!-- form for editing enrolment -->
         <b-form-group
                 label="Status"
                 label-for="status-input"
@@ -92,6 +93,7 @@
 </template>
 <script>
 import axios from 'axios'
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
 	name: "EnrolmentsEdit",
@@ -115,7 +117,7 @@ export default {
             
             let token = localStorage.getItem('token')
 
-            axios.get(`https://college-api-mo.herokuapp.com/api/enrolments/${this.$route.params.id}`,
+            axios.get(`${URL}enrolments/${this.$route.params.id}`,
             {
                 headers: {
                   "Authorization": `Bearer ${token}`

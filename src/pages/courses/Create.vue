@@ -2,6 +2,7 @@
     <b-col>
         <h2>Create Course</h2>
 
+        <!-- form for creating course -->
         <b-form-group
             label="Title"
             label-for="title-input"
@@ -74,6 +75,7 @@
 </template>
 <script>
 import axios from 'axios'
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
 	name: "CoursesCreate",
@@ -93,7 +95,7 @@ export default {
             
             let token = localStorage.getItem('token')
 
-            axios.post('https://college-api-mo.herokuapp.com/api/courses', this.form, {
+            axios.post(`${URL}courses`, this.form, {
                 headers: {
                   "Authorization": `Bearer ${token}`
                 }

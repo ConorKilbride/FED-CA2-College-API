@@ -1,7 +1,7 @@
 <template>
     <b-container>
         <h2>This is the Universities index page</h2>
-
+        <!-- an index page for a university api -->
         <div>
             <!-- <SearchBox /> -->
             <div class="search-box">
@@ -19,6 +19,7 @@
                     </b-button> 
             </div>
 
+            <!-- looping through the universities -->
             <div>
                 <b-col >
                     <b-row cols="3">

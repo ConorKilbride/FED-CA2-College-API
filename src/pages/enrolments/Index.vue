@@ -18,7 +18,7 @@
 <script>
 import axios from 'axios'
 
-// const COURSE_URL = "https://college-api-mo.herokuapp.com/api/"
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
     name: 'EnrolmentsIndex',
@@ -53,7 +53,7 @@ export default {
             let token = localStorage.getItem('token')
 
             axios
-            .get(`https://college-api-mo.herokuapp.com/api/enrolments`,
+            .get(`${URL}enrolments`,
             {
               headers: {
                 "Authorization": `Bearer ${token}`

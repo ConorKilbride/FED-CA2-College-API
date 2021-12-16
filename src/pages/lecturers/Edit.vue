@@ -2,6 +2,7 @@
     <b-col>
         <h2>Edit Lecturer</h2>
 
+        <!-- form for editing lecturer -->
         <b-form-group
             label="Name"
             label-for="name-input"
@@ -60,6 +61,7 @@
 </template>
 <script>
 import axios from 'axios'
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
 	name: "LecturersEdit",
@@ -82,7 +84,7 @@ export default {
             
             let token = localStorage.getItem('token')
 
-            axios.get(`https://college-api-mo.herokuapp.com/api/lecturers/${this.$route.params.id}`,
+            axios.get(`${URL}lecturers/${this.$route.params.id}`,
             {
                 headers: {
                   "Authorization": `Bearer ${token}`
@@ -104,7 +106,7 @@ export default {
         submitForm() {
             let token = localStorage.getItem('token')
 
-            axios.put(`https://college-api-mo.herokuapp.com/api/lecturers/${this.$route.params.id}`, this.form, {
+            axios.put(`${URL}lecturers/${this.$route.params.id}`, this.form, {
                 headers: {
                   "Authorization": `Bearer ${token}`
                 }

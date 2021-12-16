@@ -13,9 +13,6 @@
     <p>
       <b>Phone:</b> {{ lecturer.phone }}
     </p>
-    <!-- <p>
-      {{ lecturer.description }}
-    </p> -->
     <b-button @click="cancel()" variant="primary">Go Back</b-button>
     <b-button :to="{ name: 'lecturers_edit', params: { id: $route.params.id } }" class="float-right" variant="warning">Edit</b-button>
     <b-button @click="deleteLecturer()" variant="danger">Delete</b-button>
@@ -24,6 +21,7 @@
 
 <script>
 import axios from 'axios'
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
   name: "LecturersShow",
@@ -42,7 +40,7 @@ export default {
         let token = localStorage.getItem('token')
 
           axios
-            .get(`https://college-api-mo.herokuapp.com/api/lecturers/${this.$route.params.id}`,
+            .get(`${URL}lecturers/${this.$route.params.id}`,
             {
               headers: {
                 "Authorization": `Bearer ${token}`

@@ -2,6 +2,7 @@
     <b-col>
         <h2>Create Enrolment</h2>
 
+        <!-- form for creating enrolment -->
         <b-form-group
                 label="Status"
                 label-for="status-input"
@@ -93,9 +94,10 @@
 </template>
 <script>
 import axios from 'axios'
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
-	name: "EnrolementsCreate",
+	name: "EnrolmentsCreate",
     data() {
         return {
             lecturers: [],
@@ -114,7 +116,7 @@ export default {
             
             let token = localStorage.getItem('token')
 
-            axios.post('https://college-api-mo.herokuapp.com/api/enrolments', this.form, {
+            axios.post(`${URL}enrolments`, this.form, {
                 headers: {
                   "Authorization": `Bearer ${token}`
                 }

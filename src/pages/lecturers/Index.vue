@@ -11,17 +11,6 @@
 			</template>
 
 		</b-table>
-<!-- 
-        <p
-            v-for="lecturer in lecturers"
-            :key="lecturer.id"
-        >
-
-       <router-link :to="{name:'lecturers_show', params: { id: lecturer.id}}">
-            {{ lecturer.name }}
-        </router-link>
-
-        </p> -->
         
     </b-col>
 </template>
@@ -29,7 +18,7 @@
 <script>
 import axios from 'axios'
 
-// const COURSE_URL = "https://college-api-mo.herokuapp.com/api/"
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
     name: 'LecturersIndex',
@@ -63,7 +52,7 @@ export default {
             let token = localStorage.getItem('token')
 
             axios
-            .get(`https://college-api-mo.herokuapp.com/api/lecturers`,
+            .get(`${URL}lecturers`,
             {
               headers: {
                 "Authorization": `Bearer ${token}`

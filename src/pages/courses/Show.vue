@@ -21,6 +21,7 @@
 
 <script>
 import axios from 'axios'
+const URL = "https://college-api-mo.herokuapp.com/api/"
 
 export default {
   name: "CoursesShow",
@@ -39,7 +40,7 @@ export default {
         let token = localStorage.getItem('token')
 
           axios
-            .get(`https://college-api-mo.herokuapp.com/api/courses/${this.$route.params.id}`,
+            .get(`${URL}courses/${this.$route.params.id}`,
             {
               headers: {
                 "Authorization": `Bearer ${token}`
@@ -59,7 +60,7 @@ export default {
 
         if(confirm("Are you sure you want to delete this course?")){
           axios
-          .delete(`https://college-api-mo.herokuapp.com/api/courses/${this.$route.params.id}`,
+          .delete(`${URL}courses/${this.$route.params.id}`,
           {
             headers: {
               "Authorization": `Bearer ${token}`
