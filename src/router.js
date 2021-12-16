@@ -63,9 +63,27 @@ export default new Router({
       component: () => import("./pages/enrolments/Index.vue")
     },
     {
+			path: "/enrolments/create",
+			name: "enrolments_create",
+			component: () => import("./pages/enrolments/Create.vue")
+		},
+    {
+      path: "/enrolments/:id/edit",
+      name: "enrolments_edit",
+      component: () => import("./pages/enrolments/Edit.vue")
+    },
+    {
       path: "/enrolments/:id",
       name: "enrolments_show",
       component: () => import("./pages/enrolments/Show.vue")
+    },
+
+
+    //// UNIVERSITIES ////
+    {
+      path: "/universities",
+      name: "universities_index",
+      component: () => import("./pages/universities/Index.vue")
     }
   ]
 });

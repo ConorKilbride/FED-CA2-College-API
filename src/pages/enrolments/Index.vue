@@ -2,7 +2,7 @@
     <b-col>
         <h2> This is the Enrolments index page </h2>
 
-        <!-- <b-button :to="{ name : 'enrolments_create' }" variant="primary" class="mb-2 float-right">Add</b-button> -->
+        <b-button :to="{ name : 'enrolments_create' }" variant="primary" class="mb-2 float-right">Add</b-button>
 
 		<b-table striped hover responsive headVariant="dark" :items="enrolments" :fields="headings">
 

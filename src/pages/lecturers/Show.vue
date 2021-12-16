@@ -4,6 +4,15 @@
     <p>
       <b>Name:</b> {{ lecturer.name }}
     </p>
+    <p>
+      <b>Address:</b> {{ lecturer.address }}
+    </p>
+    <p>
+      <b>Email:</b> {{ lecturer.email }}
+    </p>
+    <p>
+      <b>Phone:</b> {{ lecturer.phone }}
+    </p>
     <!-- <p>
       {{ lecturer.description }}
     </p> -->
@@ -67,6 +76,7 @@ export default {
             console.log(error)
           })
           this.$router.go(-1)
+          alert("Lecturer successfully deleted")
         }
       },
       cancel() {

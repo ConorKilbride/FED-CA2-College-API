@@ -10,6 +10,9 @@
     <p>
       <b>Points:</b> {{ course.points }}
     </p>
+    <p>
+      <b>Level:</b> {{ course.level }}
+    </p>
     <b-button @click="cancel()" variant="primary">Go Back</b-button>
     <b-button :to="{ name: 'courses_edit', params: { id: $route.params.id } }" class="float-right" variant="warning">Edit</b-button>
     <b-button @click="deleteCourse()" variant="danger">Delete</b-button>
@@ -70,6 +73,7 @@ export default {
             console.log(error)
           })
           this.$router.go(-1)
+          alert("Course successfully deleted")
         }
       },
       cancel() {

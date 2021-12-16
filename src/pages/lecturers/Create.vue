@@ -29,12 +29,12 @@
         </b-form-group>
 
         <b-form-group
-                label="Email"
-                label-for="email-input"
+                label="Phone"
+                label-for="phone-input"
         >
             <b-form-input
-                id="email-input"
-                v-model="form.email"
+                id="phone-input"
+                v-model="form.phone"
                 type="text"
                 required
             ></b-form-input>
@@ -42,12 +42,12 @@
         </b-form-group>
 
         <b-form-group
-                label="Phone"
-                label-for="phone-input"
+                label="Email"
+                label-for="email-input"
         >
             <b-form-input
-                id="phone-input"
-                v-model="form.phone"
+                id="email-input"
+                v-model="form.email"
                 type="text"
                 required
             ></b-form-input>
@@ -68,8 +68,8 @@ export default {
             form : {
                 name: "",
                 address: "",
-                email: "",
-                phone: ""
+                phone: "",
+                email: ""
             }
         }
     },

@@ -1,6 +1,6 @@
 <template>
     <b-col>
-        <h2>Add Lecturer</h2>
+        <h2>Edit Lecturer</h2>
 
         <b-form-group
             label="Name"
@@ -62,9 +62,10 @@
 import axios from 'axios'
 
 export default {
-	name: "LecturersCreate",
+	name: "LecturersEdit",
     data() {
         return {
+            //I tried having their current details show on the edit form but the text appears for a second then dissapears.
             form : {
                 name: "",
                 address: "",
@@ -88,7 +89,7 @@ export default {
                 }
             })
                  .then(response => {
-                     console.log(response.data)
+                    console.log(response.data)
 
                     this.form.name = response.data.name,
                     this.form.address = response.data.address,
@@ -96,8 +97,8 @@ export default {
                     this.form.phone = response.data.phone
                  })
                  .catch(err =>{ 
-                     console.log(err)
-                     console.log(err.response.data.errors)
+                    console.log(err)
+                    console.log(err.response.data.errors)
                  })
         },
         submitForm() {

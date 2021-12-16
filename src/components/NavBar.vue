@@ -19,6 +19,7 @@
           <router-link class="nav-link" to="/courses">Courses</router-link>
           <router-link class="nav-link" to="/lecturers">Lecturers</router-link>
           <router-link class="nav-link" to="/enrolments">Enrolments</router-link>
+          <router-link class="nav-link" to="/universities">Universities</router-link>
         </div>
       </div>
       <button v-if="loggedIn" @click="logout" class="btn btn-outline-info my-2 my-sm-0 btn-sm">Logout</button>
